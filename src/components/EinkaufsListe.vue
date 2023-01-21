@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+import { useLocalStorage } from "@vueuse/core";
+
 import { useShoppingListStore } from "../stores/shoppingList";
 
 const { liste } = storeToRefs(useShoppingListStore());
+const localListe = useLocalStorage("shoppingList", liste);
 </script>
 
 <template>
   <div>
     <ul>
-      <li v-for="item in liste" :key="item.gegenstand">
+      <li v-for="item in localListe" :key="item.gegenstand">
         {{ item.anzahl }} {{ item.gegenstand }}
       </li>
     </ul>

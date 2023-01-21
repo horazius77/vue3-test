@@ -3,7 +3,7 @@ import {defineStore} from 'pinia'
 export const useShoppingListStore = defineStore({
     id: 'shoppingList',
     state: () => ({
-        liste: [] as { gegenstand: string, anzahl: number }[],
+        liste:[] as { gegenstand: string, anzahl: number }[]
     }),
     getters: {
         anzahlGegenstaende: (state) => {
