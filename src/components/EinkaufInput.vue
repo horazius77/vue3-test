@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import { storeToRefs } from "pinia";
-import { useLocalStorage } from "@vueuse/core";
-
 import { useShoppingListStore } from "../stores/shoppingList";
+import { ref } from "vue";
 
-
-const { anzahlGegenstaende } = storeToRefs(useShoppingListStore());
+const { anzahlGegenstaende, liste } = storeToRefs(useShoppingListStore());
 const store = useShoppingListStore();
 
 const gegenstand = ref("");
