@@ -9,6 +9,7 @@ useLocalStorage("counter", count);
 const store = useCounterStore();
 </script>
 <template>
+  <button @click="store.decrease">-</button>
   Counter: {{ count }}
   <button @click="store.increment">+</button>
 </template>
